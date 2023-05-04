@@ -8,10 +8,12 @@ function Formi({movieName}) {
     // console.log(data)
     const toast = useToast()
     const [formdata,setFormdata] = useState({
-        name:data.name,
-        email:data.email,
-        mobile:data.mobile,
-        noTicket:data.noTicket
+        //  add if data is available then data otherwise empty
+
+        name:data ? data.name : "",
+        email:data ? data.email : "",
+        mobile:data ? data.mobile : "",
+        noTicket:data ? data.noTicket : "",
     })
     const handleSubmit = (e) => {
         e.preventDefault()
