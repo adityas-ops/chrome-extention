@@ -5,7 +5,14 @@ function MovieCard({item}) {
   return (
    <>
     <Box 
-         borderWidth="1px" borderRadius="lg"  m="10px" >
+         borderWidth="1px" borderRadius="lg"  m="10px"  
+          width={{
+            base: "310px",
+            md: "310px",
+            lg: "100%",
+            xl: "100%",
+          }}
+         >
       <Card 
         // maxW="sm"
         borderWidth="1px"
@@ -13,6 +20,7 @@ function MovieCard({item}) {
         overflow="hidden"
         boxShadow="lg"
         bg="transparent"
+        
       >
       <Tag
         size="lg"

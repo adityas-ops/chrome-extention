@@ -1,18 +1,12 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import MovieCard from '../components/MovieCard'
 import { Grid, GridItem } from '@chakra-ui/react'
-// import { Link } from 'react-router-dom'
+import { useShows } from '../api/ShowsProvider'
 
 function Home() {
-  //  fetch data from api
-  const [data,setData] = useState([])
-  useEffect(() => {
-    fetch('https://api.tvmaze.com/search/shows?q=all')
-    .then(res => res.json())
-    .then(data => data.map(item => item.show))
-    .then(data => setData(data))
-  },[])
-  console.log("data is ", data)
+
+  const data = useShows()
+  // console.log("data is the  ", data)
   return (
 <>
     <Grid
@@ -25,18 +19,20 @@ function Home() {
         justifyContent="space-evenly"
         alignItems="center"
         flexWrap="wrap"
+        mt={{
+          base: "60px",
+          md: "60px",
+          lg: "70px",
+          xl: "70px",
+        }}
 
       >
         {
-      data.map((item,index) => {
-        return (
-          
-          <GridItem key={index}>
-            <MovieCard item={item} />
-          </GridItem>
-        
-        )
-      })
+          data.map(item => (
+            <GridItem key={item.id} >
+              <MovieCard item={item.show} />
+            </GridItem>
+          ))
       }
       </Grid>
 </>

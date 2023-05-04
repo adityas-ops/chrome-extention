@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Routes,Route } from 'react-router-dom';
+import { Routes,Route, Link } from 'react-router-dom';
 import Home from "./pages/Home"
 import Summary from "./pages/Summary"
 import { Box, Text } from '@chakra-ui/react';
@@ -16,6 +16,13 @@ function App() {
     bg="#18122B"
     w="100%"
     borderBottom="1px solid #443C68"
+    position="fixed"
+    top="0"
+    // bottom="0"
+    zIndex="100"
+    >
+    <Link
+    to="/"
     >
       <Text
       fontSize="3xl"
@@ -23,9 +30,11 @@ function App() {
       textAlign="center"
       p={3}
       color="white"
+      
       >
         Movies 
       </Text>
+      </Link>
     </Box>
  <Routes>
       <Route path="/" element={<Home/>} />
