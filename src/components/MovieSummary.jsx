@@ -211,7 +211,7 @@ function MovieSummary({ item }) {
         <ModalContent 
           bg="gray.900"
         >
-          <ModalCloseButton color="white" />
+          <ModalCloseButton color="gray" />
           <ModalBody>
             <Formi movieName={item.name} />
           </ModalBody>
