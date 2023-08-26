@@ -22,6 +22,7 @@ function Summary() {
       md: "10px",
       lg: "70px",
       xl: "70px",
+      2xl:"90px"
     }}
       height={{
         base: "140%",
